@@ -1,4 +1,4 @@
-import { Star, Quote } from 'lucide-react';
+import { Quote } from 'lucide-react';
 
 interface TestimonialsProps {
   onNavigate: (page: string) => void;
@@ -7,52 +7,40 @@ interface TestimonialsProps {
 export default function Testimonials({ onNavigate }: TestimonialsProps) {
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      role: 'Hotel Manager',
-      company: 'Luxury Beach Resort, Goa',
-      review: 'Group One Security has been exceptional in providing security services for our resort. Their guards are professional, punctual, and highly reliable. We have seen a significant improvement in guest safety and satisfaction since partnering with them.',
-      rating: 5,
-      image: 'RK',
+      name: 'Lokesh Rajput',
+      service: 'Event Security',
+      security: 'Bouncers',
+      review: 'The bouncers provided were professional and ensured safety throughout our event.',
     },
     {
-      name: 'Priya Sharma',
-      role: 'Event Organizer',
-      company: 'Prime Events & Entertainment',
-      review: 'Their bouncers handled our high-profile event with utmost professionalism. The team was well-coordinated, managed crowds effectively, and ensured complete safety throughout the night. Highly recommend their services for any event.',
-      rating: 5,
-      image: 'PS',
+      name: 'Digamber Bhati',
+      service: 'Corporate Security',
+      security: 'Personal Security Officers (PSO)',
+      review: 'The PSO services for our executives were discreet and highly effective.',
     },
     {
-      name: 'Amit Desai',
-      role: 'Business Owner',
-      company: 'Tech Solutions Pvt Ltd',
-      review: 'Outstanding service! The security team is well-trained and ensures complete safety of our premises. Their attention to detail and prompt response to any situation has given us complete peace of mind.',
-      rating: 5,
-      image: 'AD',
+      name: 'Rohit Kumar',
+      service: 'Residential Security',
+      security: 'Security Guards',
+      review: 'The security guards have been reliable and keep our complex safe.',
     },
     {
-      name: 'Sunita Menon',
-      role: 'Property Manager',
-      company: 'Skyline Residences',
-      review: 'We have been using Group One for our residential complex security and housekeeping services for over 3 years. The staff is courteous, professional, and always goes above and beyond their duties.',
-      rating: 5,
-      image: 'SM',
+      name: 'Punit Kumar',
+      service: 'Commercial Security',
+      security: 'Security Guards',
+      review: 'Our office premises are secure thanks to their well-trained guards.',
     },
     {
-      name: 'Vikram Rao',
-      role: 'CEO',
-      company: 'Coastal Industries',
-      review: 'The PSO services provided for our executives are top-notch. The officers are discreet, highly trained, and provide a sense of security that is invaluable in today\'s world. Excellent service!',
-      rating: 5,
-      image: 'VR',
+      name: 'Anjali Singh',
+      service: 'Event Security',
+      security: 'Bouncers',
+      review: 'Their team managed crowds efficiently, making our event a success.',
     },
     {
-      name: 'Neha Patel',
-      role: 'Restaurant Owner',
-      company: 'The Spice Garden',
-      review: 'Their security guards have been instrumental in maintaining order and safety at our establishment. Professional, alert, and always ready to help. Couldn\'t ask for better security partners.',
-      rating: 5,
-      image: 'NP',
+      name: 'Meera Sharma',
+      service: 'Housekeeping and Security',
+      security: 'Security Guards',
+      review: 'Their combined security and housekeeping services have been exceptional for our property.',
     },
   ];
 
@@ -77,26 +65,16 @@ export default function Testimonials({ onNavigate }: TestimonialsProps) {
               >
                 <div className="flex justify-between items-start mb-6">
                   <Quote className="h-10 w-10 text-amber-600 opacity-50" />
-                  <div className="flex gap-1">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="h-5 w-5 fill-amber-500 text-amber-500" />
-                    ))}
-                  </div>
                 </div>
 
                 <p className="text-gray-700 text-lg leading-relaxed mb-6 italic">
                   "{testimonial.review}"
                 </p>
 
-                <div className="flex items-center gap-4 pt-6 border-t border-amber-200">
-                  <div className="w-14 h-14 bg-amber-800 rounded-full flex items-center justify-center text-white font-bold text-xl flex-shrink-0">
-                    {testimonial.image}
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
-                    <p className="text-sm text-gray-600">{testimonial.role}</p>
-                    <p className="text-xs text-amber-700 font-medium">{testimonial.company}</p>
-                  </div>
+                <div className="pt-6 border-t border-amber-200">
+                  <h4 className="font-bold text-gray-900 text-lg">{testimonial.name}</h4>
+                  <p className="text-sm text-gray-600">{testimonial.service}</p>
+                  <p className="text-xs text-amber-700 font-medium">{testimonial.security}</p>
                 </div>
               </div>
             ))}

@@ -1,4 +1,4 @@
-import { Shield, Users, Award, Clock, ShieldCheck, UserCheck, Home as HomeIcon, Music, ArrowRight } from 'lucide-react';
+import { Shield, Users, Award, Clock, ShieldCheck, UserCheck, Home as HomeIcon, Music, ArrowRight, Settings } from 'lucide-react';
 
 interface HomeProps {
   onNavigate: (page: string) => void;
@@ -6,11 +6,42 @@ interface HomeProps {
 
 export default function Home({ onNavigate }: HomeProps) {
   const services = [
-    { icon: ShieldCheck, title: 'Security Guard', description: 'Professional trained guards for your premises' },
-    { icon: Shield, title: 'Gun Man', description: 'Armed security personnel for high-risk areas' },
-    { icon: UserCheck, title: 'PSO', description: 'Personal Security Officers for VIP protection' },
-    { icon: HomeIcon, title: 'Housekeeping', description: 'Professional cleaning and maintenance services' },
-    { icon: Music, title: 'Event Bouncers', description: 'Professional security for events and gatherings' },
+    { 
+      icon: ShieldCheck, 
+      title: 'Security Guard', 
+      description: 'Professional trained guards for your premises', 
+      details: 'Our security guards undergo rigorous training and background checks to ensure top-notch protection for commercial and residential properties.'
+    },
+    { 
+      icon: Shield, 
+      title: 'Gun Man', 
+      description: 'Armed security personnel for high-risk areas', 
+      details: 'Highly skilled armed professionals equipped to handle high-threat environments with precision and discretion.'
+    },
+    { 
+      icon: UserCheck, 
+      title: 'PSO', 
+      description: 'Personal Security Officers for VIP protection', 
+      details: 'Dedicated personal security officers offering close protection services for executives, dignitaries, and high-profile individuals.'
+    },
+    { 
+      icon: HomeIcon, 
+      title: 'House Security', 
+      description: 'Comprehensive home security and maintenance services', 
+      details: 'Tailored solutions including alarm systems, surveillance, and regular patrols to keep your home safe and secure.'
+    },
+    { 
+      icon: Music, 
+      title: 'Event Bouncers', 
+      description: 'Professional security for events and gatherings', 
+      details: 'Experienced bouncers trained in crowd control and conflict resolution to ensure safe and enjoyable events.'
+    },
+    { 
+      icon: Settings, 
+      title: 'Custom Security', 
+      description: 'Tailored security solutions for unique needs', 
+      details: 'Customized security plans designed to address specific risks and requirements for businesses, events, or individuals.'
+    },
   ];
 
   const whyChooseUs = [
@@ -22,8 +53,8 @@ export default function Home({ onNavigate }: HomeProps) {
 
   const testimonials = [
     {
-      name: 'Rajesh Kumar',
-      role: 'Hotel Manager',
+      name: 'Lokesh Rajput',
+      role: 'MR.World',
       review: 'Group One Security has been exceptional. Their guards are professional, punctual, and highly reliable.',
     },
     {
@@ -32,16 +63,37 @@ export default function Home({ onNavigate }: HomeProps) {
       review: 'Their bouncers handled our event with utmost professionalism. Highly recommend their services.',
     },
     {
-      name: 'Amit Desai',
+      name: 'Digamber Bhati',
       role: 'Business Owner',
       review: 'Outstanding service! The security team is well-trained and ensures complete safety of our premises.',
     },
   ];
 
+  const whyGroupOne = [
+    {
+      title: 'Proven Expertise',
+      description: 'With over a decade of experience, we deliver reliable and effective security solutions.',
+      image: '/services/1.png',
+    },
+    {
+      title: 'Advanced Technology',
+      description: 'Utilizing cutting-edge surveillance and security systems for maximum protection.',
+      image: '/services/2.png',
+    },
+    {
+      title: 'Client-Centric Approach',
+      description: 'We prioritize your needs, offering personalized services to ensure satisfaction.',
+      image: '/services/5.png',
+    },
+  ];
+
   return (
     <div className="bg-white">
-      <section className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900">
-        <div className="absolute inset-0 bg-black opacity-40"></div>
+      <section 
+        className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 bg-cover bg-center"
+        style={{ backgroundImage: `url(/services/6.png)` }}
+      >
+        <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
             Your Safety, Our Priority
@@ -93,7 +145,7 @@ export default function Home({ onNavigate }: HomeProps) {
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Our Services</h2>
           <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-            Comprehensive security solutions for every need
+            Comprehensive security solutions tailored to meet diverse needs with expertise and reliability
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
@@ -105,9 +157,41 @@ export default function Home({ onNavigate }: HomeProps) {
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-600 mb-4">{service.description}</p>
+                <p className="text-gray-600 mb-2">{service.description}</p>
+                <p className="text-gray-500 text-sm mb-4">{service.details}</p>
                 <button
                   onClick={() => onNavigate('services')}
+                  className="text-amber-800 font-semibold flex items-center gap-2 hover:gap-3 transition-all"
+                >
+                  Learn More <ArrowRight className="h-4 w-4" />
+                </button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Why Group One</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Discover what sets Group One Security Services apart in delivering unparalleled protection
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {whyGroupOne.map((item, index) => (
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition-all transform hover:-translate-y-2"
+              >
+                <img 
+                  src={item.image} 
+                  alt={item.title} 
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <p className="text-gray-600 mb-4">{item.description}</p>
+                <button
+                  onClick={() => onNavigate('about')}
                   className="text-amber-800 font-semibold flex items-center gap-2 hover:gap-3 transition-all"
                 >
                   Learn More <ArrowRight className="h-4 w-4" />

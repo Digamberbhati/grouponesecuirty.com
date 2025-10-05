@@ -1,4 +1,4 @@
-import { Shield, Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -11,7 +11,7 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center space-x-2 mb-4">
-              <Shield className="h-8 w-8 text-amber-600" />
+              <img src="/logo/logo.png" alt="Group One Logo" className="h-8 w-8" />
               <div className="flex flex-col">
                 <span className="text-xl font-bold">Group One</span>
                 <span className="text-xs text-amber-600">Security Services</span>
@@ -101,6 +101,17 @@ export default function Footer({ onNavigate }: FooterProps) {
         <div className="border-t border-gray-800 mt-8 pt-8 text-center">
           <p className="text-gray-400 text-sm">
             &copy; {new Date().getFullYear()} Group One Security Services. All rights reserved.
+          </p>
+          <p className="text-gray-400 text-sm mt-2">
+            Managed and designed by{' '}
+            <a
+              href="https://www.greatertechhub.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-amber-600 hover:underline"
+            >
+              GreaterTechHub
+            </a>
           </p>
         </div>
       </div>

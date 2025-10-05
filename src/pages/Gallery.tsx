@@ -5,51 +5,30 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryImages = [
-    {
-      url: 'https://images.pexels.com/photos/2884842/pexels-photo-2884842.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Professional Security Guard',
-      category: 'Security Personnel',
-    },
-    {
-      url: 'https://images.pexels.com/photos/8112171/pexels-photo-8112171.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Event Security Team',
-      category: 'Event Services',
-    },
-    {
-      url: 'https://images.pexels.com/photos/6077326/pexels-photo-6077326.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Armed Security Officer',
-      category: 'Armed Protection',
-    },
-    {
-      url: 'https://images.pexels.com/photos/4386467/pexels-photo-4386467.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Professional Housekeeping',
-      category: 'Housekeeping',
-    },
-    {
-      url: 'https://images.pexels.com/photos/7551662/pexels-photo-7551662.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Security Patrol',
-      category: 'Security Services',
-    },
-    {
-      url: 'https://images.pexels.com/photos/1181498/pexels-photo-1181498.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Event Management',
-      category: 'Event Services',
-    },
-    {
-      url: 'https://images.pexels.com/photos/5553046/pexels-photo-5553046.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Security Control Room',
-      category: 'Monitoring',
-    },
-    {
-      url: 'https://images.pexels.com/photos/4195325/pexels-photo-4195325.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'Cleaning Services',
-      category: 'Housekeeping',
-    },
-    {
-      url: 'https://images.pexels.com/photos/8369579/pexels-photo-8369579.jpeg?auto=compress&cs=tinysrgb&w=800',
-      title: 'VIP Protection',
-      category: 'PSO Services',
-    },
+    { url: '/services/1.png' },
+    { url: '/services/2.png' },
+    { url: '/services/3.png' },
+    { url: '/services/4.png' },
+    { url: '/services/5.png' },
+    { url: '/services/6.png' },
+    { url: '/img/1.jpg' },
+    { url: '/img/2.jpg' },
+    { url: '/img/3.jpg' },
+    { url: '/img/4.jpg' },
+    { url: '/img/5.jpg' },
+    { url: '/img/6.jpg' },
+    { url: '/img/7.jpg' },
+    { url: '/img/8.jpg' },
+    { url: 'img/9.jpg' },
+    { url: '/img/10.jpg' },
+    { url: '/img/12.jpg' },
+    { url: '/img/14.jpg' },
+    { url: '/img/13.jpg' },
+    { url: '/img/15.jpg' },
+    { url: '/img/16.jpg' },
+    { url: '/img/17.jpg' },
+    { url: '/img/18.jpg' },
+    { url: '/img/19.jpg' },
   ];
 
   const openLightbox = (index: number) => {
@@ -94,16 +73,12 @@ export default function Gallery() {
               >
                 <img
                   src={image.url}
-                  alt={image.title}
                   className="w-full h-72 object-cover"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end">
                   <div className="p-6 text-white">
-                    <div className="text-sm font-semibold text-amber-400 mb-1">
-                      {image.category}
-                    </div>
-                    <h3 className="text-lg font-bold">{image.title}</h3>
+                    
                   </div>
                 </div>
               </div>
@@ -138,14 +113,9 @@ export default function Gallery() {
           <div className="max-w-6xl w-full">
             <img
               src={galleryImages[selectedImage].url}
-              alt={galleryImages[selectedImage].title}
               className="w-full h-auto max-h-[85vh] object-contain rounded-lg"
             />
             <div className="text-center mt-6 text-white">
-              <div className="text-sm font-semibold text-amber-400 mb-2">
-                {galleryImages[selectedImage].category}
-              </div>
-              <h3 className="text-2xl font-bold">{galleryImages[selectedImage].title}</h3>
               <p className="text-gray-400 mt-2">
                 {selectedImage + 1} / {galleryImages.length}
               </p>

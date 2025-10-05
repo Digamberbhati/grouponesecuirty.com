@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Menu, X, Shield } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 interface HeaderProps {
   currentPage: string;
@@ -16,7 +16,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
     { name: 'Gallery', id: 'gallery' },
     { name: 'Testimonials', id: 'testimonials' },
     { name: 'Contact', id: 'contact' },
-    { name: 'Policies', id: 'policies' },
+    // { name: 'Policies', id: 'policies' },
   ];
 
   return (
@@ -27,7 +27,11 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             className="flex items-center space-x-2 cursor-pointer"
             onClick={() => onNavigate('home')}
           >
-            <Shield className="h-10 w-10 text-amber-800" />
+            <img 
+              src="/logo/logo.png" 
+              alt="Group One Security Services Logo" 
+              className="h-12 w-12 object-contain"
+            />
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-gray-900">Group One</span>
               <span className="text-sm text-amber-800 -mt-1">Security Services</span>

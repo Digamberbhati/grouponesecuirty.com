@@ -1,4 +1,4 @@
-import { ShieldCheck, Shield, UserCheck, Home, Music, CheckCircle, ArrowRight } from 'lucide-react';
+import { ShieldCheck, Shield, UserCheck, Home, Music, CheckCircle, ArrowRight, Settings } from 'lucide-react';
 
 interface ServicesProps {
   onNavigate: (page: string) => void;
@@ -50,15 +50,15 @@ export default function Services({ onNavigate }: ServicesProps) {
     },
     {
       icon: Home,
-      title: 'Housekeeping Services',
-      description: 'Professional cleaning and maintenance services for residential and commercial properties. Maintain a clean, safe, and welcoming environment.',
+      title: 'House Security',
+      description: 'Comprehensive home security services to protect your residence with advanced systems and vigilant personnel.',
       features: [
-        'Professional cleaning staff',
-        'Residential and commercial services',
-        'Daily or periodic cleaning',
-        'Eco-friendly products',
-        'Deep cleaning services',
-        'Maintenance support',
+        'Alarm system installation',
+        '24/7 surveillance monitoring',
+        'Regular security patrols',
+        'Access control systems',
+        'Emergency response coordination',
+        'Smart home integration',
       ],
       color: 'from-green-50 to-emerald-50',
     },
@@ -75,6 +75,20 @@ export default function Services({ onNavigate }: ServicesProps) {
         'Event-specific training',
       ],
       color: 'from-purple-50 to-pink-50',
+    },
+    {
+      icon: Settings,
+      title: 'Custom Security',
+      description: 'Tailored security solutions designed to address specific risks and requirements for businesses, events, or individuals.',
+      features: [
+        'Customized security plans',
+        'Risk analysis and mitigation',
+        'Flexible deployment options',
+        'Specialized personnel training',
+        'Integrated security systems',
+        'Client-specific protocols',
+      ],
+      color: 'from-gray-50 to-slate-50',
     },
   ];
 
