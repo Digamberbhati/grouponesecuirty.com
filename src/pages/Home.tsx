@@ -87,11 +87,25 @@ export default function Home({ onNavigate }: HomeProps) {
     },
   ];
 
+  const carouselImages = [
+    '/img/10.jpg',
+    '/img/11.jpg',
+    '/img/12.jpg',
+    '/img/13.jpg',
+    '/img/14.jpg',
+    '/img/15.jpg',
+    '/img/16.jpg',
+    '/img/17.jpg',
+    '/img/18.jpg',
+    '/img/19.jpg',
+    
+  ];
+
   return (
     <div className="bg-white">
       <section 
         className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 bg-cover bg-center"
-        style={{ backgroundImage: `url(/services/6.png)` }}
+        style={{ backgroundImage: `url(/img/10.jpg)` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
@@ -114,6 +128,38 @@ export default function Home({ onNavigate }: HomeProps) {
             >
               Contact Us
             </button>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-4 bg-gray-50">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Our Work in Action</h2>
+          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+            Explore our security services through these featured moments
+          </p>
+          <div className="overflow-hidden">
+            <div className="flex animate-marquee">
+              {carouselImages.map((image, index) => (
+                <div key={index} className="flex-shrink-0 w-80 h-48 mx-2">
+                  <img
+                    src={image}
+                    alt={`Carousel image ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+              {/* Duplicate for seamless loop */}
+              {carouselImages.map((image, index) => (
+                <div key={`dup-${index}`} className="flex-shrink-0 w-80 h-48 mx-2">
+                  <img
+                    src={image}
+                    alt={`Carousel image ${index + 1}`}
+                    className="w-full h-full object-cover rounded-lg"
+                  />
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -244,6 +290,20 @@ export default function Home({ onNavigate }: HomeProps) {
           </button>
         </div>
       </section>
+
+      <style >{`
+        @keyframes marquee {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+        .animate-marquee {
+          animation: marquee 30s linear infinite;
+        }
+      `}</style>
     </div>
   );
 }
