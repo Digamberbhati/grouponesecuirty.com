@@ -1,4 +1,4 @@
-import { Phone, Mail, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
+import { Phone, Mail, MapPin, Facebook,  Instagram, } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
@@ -60,7 +60,7 @@ export default function Footer({ onNavigate }: FooterProps) {
               </li>
               <li className="flex items-start space-x-2">
                 <Mail className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-400">info@grouponesecurity.com</span>
+                <span className="text-sm text-gray-400">info@grouponesecurity.in</span>
               </li>
               <li className="flex items-start space-x-2">
                 <MapPin className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
@@ -77,15 +77,15 @@ export default function Footer({ onNavigate }: FooterProps) {
               <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
                 <Twitter className="h-6 w-6" />
-              </a>
+              </a> */}
               <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
+              {/* <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
                 <Linkedin className="h-6 w-6" />
-              </a>
+              </a> */}
             </div>
             <div className="space-y-2">
               <button onClick={() => onNavigate('policies')} className="block text-gray-400 hover:text-amber-600 transition-colors text-sm">

@@ -10,6 +10,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       icon: ShieldCheck,
       title: 'Security Guard Services',
       description: 'Professional trained security guards to protect your premises 24/7. Our guards are vigilant, well-trained, and equipped to handle various security situations.',
+      image: '/img/15.jpg', // Replace with your image URL
       features: [
         'Trained and certified personnel',
         '24/7 availability',
@@ -24,6 +25,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       icon: Shield,
       title: 'Armed Security (Gun Man)',
       description: 'Licensed armed security personnel for high-risk areas and valuable asset protection. Trained in weapon handling and tactical response.',
+      image: '/img/12.jpg', // Replace with your image URL
       features: [
         'Licensed and trained personnel',
         'High-security protection',
@@ -38,6 +40,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       icon: UserCheck,
       title: 'Personal Security Officer (PSO)',
       description: 'Dedicated personal security officers for VIP protection, executives, and high-profile individuals requiring close protection.',
+      image: '/img/4.jpg', // Replace with your image URL
       features: [
         'Close protection services',
         'Threat assessment',
@@ -52,6 +55,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       icon: Home,
       title: 'House Security',
       description: 'Comprehensive home security services to protect your residence with advanced systems and vigilant personnel.',
+      image: '/img/3.jpg', // Replace with your image URL
       features: [
         'Alarm system installation',
         '24/7 surveillance monitoring',
@@ -66,6 +70,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       icon: Music,
       title: 'Bouncers for Events',
       description: 'Professional event security personnel to manage crowds, control access, and ensure safety at concerts, parties, weddings, and corporate events.',
+      image: '/img/10.jpg', // Replace with your image URL
       features: [
         'Crowd management',
         'Access control',
@@ -80,6 +85,7 @@ export default function Services({ onNavigate }: ServicesProps) {
       icon: Settings,
       title: 'Custom Security',
       description: 'Tailored security solutions designed to address specific risks and requirements for businesses, events, or individuals.',
+      image: '/img/9.jpg', // Replace with your image URL
       features: [
         'Customized security plans',
         'Risk analysis and mitigation',
@@ -111,32 +117,43 @@ export default function Services({ onNavigate }: ServicesProps) {
                 key={index}
                 className={`bg-gradient-to-br ${service.color} rounded-2xl shadow-lg overflow-hidden transform hover:scale-[1.02] transition-all`}
               >
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8 lg:p-12">
-                  <div>
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-800 rounded-xl mb-6">
-                      <service.icon className="h-8 w-8 text-white" />
-                    </div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
-                    <p className="text-gray-700 text-lg leading-relaxed mb-6">
-                      {service.description}
-                    </p>
-                    <button
-                      onClick={() => onNavigate('contact')}
-                      className="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all"
-                    >
-                      Get a Quote <ArrowRight className="h-5 w-5" />
-                    </button>
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 p-8 lg:p-12">
+                  {/* Image Section */}
+                  <div className="lg:col-span-1">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-64 object-cover rounded-xl lg:h-full"
+                    />
                   </div>
-                  <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
-                    <ul className="space-y-3">
-                      {service.features.map((feature, idx) => (
-                        <li key={idx} className="flex items-start gap-3">
-                          <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-700 text-lg">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
+                  {/* Content Section */}
+                  <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                      <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-800 rounded-xl mb-6">
+                        <service.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <h2 className="text-3xl font-bold text-gray-900 mb-4">{service.title}</h2>
+                      <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                        {service.description}
+                      </p>
+                      <button
+                        onClick={() => onNavigate('contact')}
+                        className="bg-amber-800 hover:bg-amber-900 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 transition-all"
+                      >
+                        Get a Quote <ArrowRight className="h-5 w-5" />
+                      </button>
+                    </div>
+                    <div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-4">Key Features</h3>
+                      <ul className="space-y-3">
+                        {service.features.map((feature, idx) => (
+                          <li key={idx} className="flex items-start gap-3">
+                            <CheckCircle className="h-6 w-6 text-green-600 flex-shrink-0 mt-0.5" />
+                            <span className="text-gray-700 text-lg">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
               </div>

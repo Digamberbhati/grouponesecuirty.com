@@ -10,37 +10,43 @@ export default function Home({ onNavigate }: HomeProps) {
       icon: ShieldCheck, 
       title: 'Security Guard', 
       description: 'Professional trained guards for your premises', 
-      details: 'Our security guards undergo rigorous training and background checks to ensure top-notch protection for commercial and residential properties.'
+      details: 'Our security guards undergo rigorous training and background checks to ensure top-notch protection for commercial and residential properties.',
+      image: '/img/10.jpg',
     },
     { 
       icon: Shield, 
       title: 'Gun Man', 
       description: 'Armed security personnel for high-risk areas', 
-      details: 'Highly skilled armed professionals equipped to handle high-threat environments with precision and discretion.'
+      details: 'Highly skilled armed professionals equipped to handle high-threat environments with precision and discretion.',
+      image: '/img/11.jpg',
     },
     { 
       icon: UserCheck, 
       title: 'PSO', 
       description: 'Personal Security Officers for VIP protection', 
-      details: 'Dedicated personal security officers offering close protection services for executives, dignitaries, and high-profile individuals.'
+      details: 'Dedicated personal security officers offering close protection services for executives, dignitaries, and high-profile individuals.',
+      image: '/img/9.jpg',
     },
     { 
       icon: HomeIcon, 
       title: 'House Security', 
       description: 'Comprehensive home security and maintenance services', 
-      details: 'Tailored solutions including alarm systems, surveillance, and regular patrols to keep your home safe and secure.'
+      details: 'Tailored solutions including alarm systems, surveillance, and regular patrols to keep your home safe and secure.',
+      image: '/img/7.jpg',
     },
     { 
       icon: Music, 
       title: 'Event Bouncers', 
       description: 'Professional security for events and gatherings', 
-      details: 'Experienced bouncers trained in crowd control and conflict resolution to ensure safe and enjoyable events.'
+      details: 'Experienced bouncers trained in crowd control and conflict resolution to ensure safe and enjoyable events.',
+      image: '/img/2.jpg',
     },
     { 
       icon: Settings, 
       title: 'Custom Security', 
       description: 'Tailored security solutions for unique needs', 
-      details: 'Customized security plans designed to address specific risks and requirements for businesses, events, or individuals.'
+      details: 'Customized security plans designed to address specific risks and requirements for businesses, events, or individuals.',
+      image: '/img/1.jpg',
     },
   ];
 
@@ -98,14 +104,13 @@ export default function Home({ onNavigate }: HomeProps) {
     '/img/17.jpg',
     '/img/18.jpg',
     '/img/19.jpg',
-    
   ];
 
   return (
     <div className="bg-white">
       <section 
         className="relative h-screen flex items-center justify-center bg-gradient-to-br from-gray-900 via-gray-800 to-amber-900 bg-cover bg-center"
-        style={{ backgroundImage: `url(/img/10.jpg)` }}
+        style={{ backgroundImage: `url(/services/6.png)` }}
       >
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center text-white px-4 max-w-4xl">
@@ -149,7 +154,6 @@ export default function Home({ onNavigate }: HomeProps) {
                   />
                 </div>
               ))}
-              {/* Duplicate for seamless loop */}
               {carouselImages.map((image, index) => (
                 <div key={`dup-${index}`} className="flex-shrink-0 w-80 h-48 mx-2">
                   <img
@@ -199,6 +203,11 @@ export default function Home({ onNavigate }: HomeProps) {
                 key={index}
                 className="bg-white p-8 rounded-xl shadow-md hover:shadow-2xl transition-all transform hover:-translate-y-2"
               >
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-amber-800 rounded-lg mb-4">
                   <service.icon className="h-7 w-7 text-white" />
                 </div>
@@ -291,7 +300,7 @@ export default function Home({ onNavigate }: HomeProps) {
         </div>
       </section>
 
-      <style >{`
+      <style>{`
         @keyframes marquee {
           0% {
             transform: translateX(0);
