@@ -1,118 +1,105 @@
-import { Phone, Mail, MapPin, Facebook,  Instagram, } from 'lucide-react';
+import {  MapPin, Facebook, Instagram, Shield, ChevronRight } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: string) => void;
 }
 
 export default function Footer({ onNavigate }: FooterProps) {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-gray-900 text-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <img src="/logo/logo.png" alt="Group One Logo" className="h-8 w-8" />
-              <div className="flex flex-col">
-                <span className="text-xl font-bold">Group One</span>
-                <span className="text-xs text-amber-600">Security Services</span>
+    <footer className="bg-[#05070a] text-white border-t border-amber-500/20 pt-16 pb-8">
+      <div className="max-w-7xl mx-auto px-6">
+        
+        {/* Main Content Grid */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-16">
+          
+          {/* 1. Brand Section */}
+          <div className="lg:col-span-4 space-y-6">
+            <div className="flex items-center gap-4 group cursor-pointer" onClick={() => onNavigate('home')}>
+              <Shield className="h-12 w-12 text-amber-500" strokeWidth={1.5} />
+              <div>
+                <h2 className="text-3xl font-black tracking-tighter uppercase italic leading-none">
+                  GROUP<span className="text-amber-500">ONE</span>
+                </h2>
+                <p className="text-[10px] font-bold tracking-[0.3em] text-gray-500 uppercase mt-1">Security</p>
               </div>
             </div>
-            <p className="text-gray-400 text-sm">
-              Professional security solutions tailored to your needs. Your safety is our priority.
+            <p className="text-gray-400 text-lg font-light leading-relaxed">
+              Professional security solutions tailored to your needs. Your safety is our absolute priority.
             </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2">
-              <li>
-                <button onClick={() => onNavigate('about')} className="text-gray-400 hover:text-amber-600 transition-colors text-sm">
-                  About Us
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('services')} className="text-gray-400 hover:text-amber-600 transition-colors text-sm">
-                  Services
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('gallery')} className="text-gray-400 hover:text-amber-600 transition-colors text-sm">
-                  Gallery
-                </button>
-              </li>
-              <li>
-                <button onClick={() => onNavigate('contact')} className="text-gray-400 hover:text-amber-600 transition-colors text-sm">
-                  Contact
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Contact Info</h3>
-            <ul className="space-y-3">
-              <li className="flex items-start space-x-2">
-                <Phone className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <div className="text-sm text-gray-400">
-                  <div>9145560600</div>
-                  <div>7775000240</div>
-                </div>
-              </li>
-              <li className="flex items-start space-x-2">
-                <Mail className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-400">info@grouponesecurity.in</span>
-              </li>
-              <li className="flex items-start space-x-2">
-                <MapPin className="h-5 w-5 text-amber-600 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-400">
-                  3rd Floor, Gera's Imperium Grand, 302, Patto Centre, Panaji, Goa 403001
-                </span>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
-            <div className="flex space-x-4 mb-6">
-              <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
-                <Facebook className="h-6 w-6" />
-              </a>
-              {/* <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
-                <Twitter className="h-6 w-6" />
-              </a> */}
-              <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
-                <Instagram className="h-6 w-6" />
-              </a>
-              {/* <a href="#" className="text-gray-400 hover:text-amber-600 transition-colors">
-                <Linkedin className="h-6 w-6" />
-              </a> */}
+            <div className="flex gap-4">
+              <a href="#" className="p-3 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-black transition-all"><Facebook className="h-6 w-6" /></a>
+              <a href="#" className="p-3 rounded-xl bg-white/5 hover:bg-amber-500 hover:text-black transition-all"><Instagram className="h-6 w-6" /></a>
             </div>
-            <div className="space-y-2">
-              <button onClick={() => onNavigate('policies')} className="block text-gray-400 hover:text-amber-600 transition-colors text-sm">
-                Privacy Policy
-              </button>
-              <button onClick={() => onNavigate('policies')} className="block text-gray-400 hover:text-amber-600 transition-colors text-sm">
-                Terms & Conditions
-              </button>
+          </div>
+
+          {/* 2. Quick Links */}
+          <div className="lg:col-span-2">
+            <h3 className="text-amber-500 font-bold uppercase tracking-widest text-sm mb-6">Explore</h3>
+            <ul className="space-y-4">
+              {['about', 'services', 'gallery', 'contact'].map((item) => (
+                <li key={item}>
+                  <button onClick={() => onNavigate(item)} className="text-gray-400 hover:text-white text-lg capitalize flex items-center group">
+                    <ChevronRight className="h-4 w-4 text-amber-500 opacity-0 group-hover:opacity-100 transition-all" />
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* 3. Offices Section (Goa & Faridabad) */}
+          <div className="lg:col-span-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Goa Office */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-amber-500">
+                <MapPin className="h-5 w-5" />
+                <span className="font-bold uppercase tracking-tighter text-lg">Goa Office</span>
+              </div>
+              <p className="text-gray-400 text-base leading-snug">
+                5th Floor, Imperium Star, Patto Centre, Panaji, Goa - 403001
+              </p>
+              <div className="flex flex-col text-lg font-bold">
+                <a href="tel:+919145560600" className="hover:text-amber-500 transition">+91 91455 60600</a>
+                <a href="tel:+918806744040" className="hover:text-amber-500 transition">+91 88067 44040</a>
+              </div>
+            </div>
+
+            {/* Faridabad Office */}
+            <div className="space-y-4">
+              <div className="flex items-center gap-2 text-amber-500">
+                <MapPin className="h-5 w-5" />
+                <span className="font-bold uppercase tracking-tighter text-lg">Faridabad Office</span>
+              </div>
+              <p className="text-gray-400 text-base leading-snug">
+                GF-60, Parsvnath City Mall, Sector 12, Haryana - 121007
+              </p>
+              <div className="flex flex-col text-lg font-bold">
+                <a href="tel:+917775000216" className="hover:text-amber-500 transition">+91 77750 00216</a>
+                <a href="tel:+917775000248" className="hover:text-amber-500 transition">+91 77750 00248</a>
+              </div>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-center">
-          <p className="text-gray-400 text-sm">
-            &copy; {new Date().getFullYear()} Group One Security Services. All rights reserved.
-          </p>
-          <p className="text-gray-400 text-sm mt-2">
-            Managed and designed by{' '}
-            <a
-              href="https://www.greatertechhub.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-amber-600 hover:underline"
-            >
-              GreaterTechHub
+        {/* Bottom Strip */}
+        <div className="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-center md:text-left">
+            <p className="text-gray-500 text-sm font-medium tracking-wide">
+              © {currentYear} <span className="text-gray-300">GroupOne Security </span>. All rights reserved.
+            </p>
+            <a href="mailto:info@grouponesecurity.in" className="text-amber-500 font-bold hover:underline block mt-1 text-base">
+              info@grouponesecurity.in
             </a>
-          </p>
+          </div>
+          
+          <div className="flex items-center gap-3 px-5 py-2 rounded-full bg-white/5 border border-white/10 group">
+            <span className="text-xs text-gray-500 uppercase font-bold tracking-widest">Designed by</span>
+            <a href="https://www.greatertechhub.com" target="_blank" className="text-lg font-black text-amber-500 tracking-tighter">
+              GREATERTECHHUB
+            </a>
+          </div>
         </div>
       </div>
     </footer>

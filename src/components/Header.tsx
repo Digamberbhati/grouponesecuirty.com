@@ -34,7 +34,7 @@ export default function Header({ currentPage, onNavigate }: HeaderProps) {
             />
             <div className="flex flex-col">
               <span className="text-2xl font-bold text-gray-900">Group One</span>
-              <span className="text-sm text-amber-800 -mt-1">Security Services</span>
+              <span className="text-sm text-amber-800 -mt-1">Security</span>
             </div>
           </div>
 

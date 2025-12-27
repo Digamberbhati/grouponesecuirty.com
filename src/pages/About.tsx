@@ -1,4 +1,4 @@
-import { Target, Eye, Award, Users, Shield, TrendingUp } from 'lucide-react';
+import { Target, Eye, Award, Users, Shield, TrendingUp,  Globe } from 'lucide-react';
 
 export default function About() {
   const values = [
@@ -28,47 +28,62 @@ export default function About() {
     { number: '500+', label: 'Clients Served' },
     { number: '1000+', label: 'Security Personnel' },
     { number: '15+', label: 'Years Experience' },
-    { number: '24/7', label: 'Support Available' },
+    { number: '24/7', label: 'Vigilance' },
   ];
 
   return (
     <div className="bg-white">
-      <section className="relative py-20 px-4 bg-gradient-to-br from-gray-900 to-amber-900 text-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">About Group One Security</h1>
-            <p className="text-xl text-gray-200 leading-relaxed">
-              A trusted name in security services across Goa, committed to safeguarding your peace of mind with excellence and integrity.
+      {/* 1. HERO SECTION */}
+      <section className="relative py-32 px-4 bg-[#05070a] text-white overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-full opacity-10 pointer-events-none" 
+             style={{ backgroundImage: `radial-gradient(circle at 2px 2px, #f59e0b 1px, transparent 0)`, backgroundSize: '40px 40px' }} />
+        
+        <div className="max-w-7xl mx-auto relative z-10">
+          <div className="max-w-4xl">
+            <div className="flex items-center gap-3 mb-6">
+               <div className="h-[2px] w-12 bg-amber-500"></div>
+               <span className="text-amber-500 font-bold tracking-[0.3em] uppercase text-sm">Our Presence: Goa & Faridabad</span>
+            </div>
+            <h1 className="text-6xl md:text-8xl font-black mb-8 tracking-tighter italic leading-none">
+              SECURE <span className="text-amber-500">BY DESIGN.</span>
+            </h1>
+            <p className="text-2xl text-gray-400 font-light leading-relaxed max-w-2xl">
+              GroupOne Security is a premier defense-grade private security firm, safeguarding peace of mind across Goa and Faridabad for over 15 years.
             </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      {/* 2. WHO WE ARE & DUAL LOCATION CONTENT */}
+      <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">Who We Are</h2>
-              <div className="space-y-4 text-gray-700 text-lg leading-relaxed">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-20 items-center">
+            <div className="lg:col-span-7">
+              <h2 className="text-5xl font-black text-gray-900 mb-8 uppercase italic tracking-tighter">
+                Who We <span className="text-amber-600 underline decoration-4 underline-offset-8">Are</span>
+              </h2>
+              <div className="space-y-6 text-gray-600 text-xl leading-relaxed font-light">
                 <p>
-                  Group One Security Services is a leading provider of comprehensive security solutions based in Goa. With over 15 years of experience, we have established ourselves as a trusted partner for businesses, individuals, and organizations seeking reliable protection.
+                  <strong className="text-gray-900 font-bold">GroupOne Security Services</strong> is a leading provider of comprehensive security solutions with a strong operational presence in <span className="text-gray-900 font-bold">Goa</span> and <span className="text-gray-900 font-bold">Faridabad</span>.
                 </p>
                 <p>
-                  Our team comprises highly trained professionals who are dedicated to ensuring the safety and security of our clients. From armed security personnel to housekeeping services, we offer a wide range of solutions tailored to meet diverse security needs.
+                  With over 15 years of industry experience, we have established ourselves as a trusted partner for businesses and individuals seeking elite protection. Our dual-hub strategy allows us to serve the industrial heart of Haryana and the tourism capital of Goa with equal precision.
                 </p>
-                <p>
-                  Located in the heart of Panaji at Gera's Imperium Grand, we serve clients across Goa and beyond, delivering excellence through our commitment to professionalism, innovation, and customer satisfaction.
-                </p>
+                <div className="flex items-center gap-4 p-8 bg-gray-50 rounded-2xl border-l-8 border-amber-500 shadow-sm">
+                    <Globe className="h-12 w-12 text-amber-600 shrink-0" />
+                    <p className="text-xl font-bold text-gray-800 leading-tight">
+                      Operating from our Command Centers in Panaji (Goa) and Sector 12 (Faridabad), we provide seamless security coverage across both regions.
+                    </p>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 gap-6">
+
+            {/* Stats Dashboard */}
+            <div className="lg:col-span-5 grid grid-cols-2 gap-4">
               {stats.map((stat, index) => (
-                <div
-                  key={index}
-                  className="bg-gradient-to-br from-amber-50 to-white p-8 rounded-xl border border-amber-200 text-center"
-                >
-                  <div className="text-4xl font-bold text-amber-800 mb-2">{stat.number}</div>
-                  <div className="text-gray-700 font-medium">{stat.label}</div>
+                <div key={index} className="bg-[#0a0c10] p-10 rounded-3xl border border-white/5 group hover:border-amber-500/30 transition-all duration-500">
+                  <div className="text-5xl font-black text-amber-500 mb-2 tracking-tighter group-hover:scale-110 transition-transform">{stat.number}</div>
+                  <div className="text-gray-500 font-bold uppercase tracking-widest text-xs">{stat.label}</div>
                 </div>
               ))}
             </div>
@@ -76,74 +91,69 @@ export default function About() {
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gray-50">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-6">
-                <Target className="h-8 w-8 text-amber-800" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Mission</h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                To provide world-class security services that protect our clients' assets, people, and reputation. We strive to create safer environments through vigilance, professionalism, and unwavering commitment to excellence.
-              </p>
+      {/* 3. MISSION & VISION */}
+      <section className="py-24 px-4 bg-gray-50 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10">
+          <div className="group bg-white p-12 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-700 relative overflow-hidden">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-amber-500 rounded-2xl mb-8 rotate-3">
+              <Target className="h-10 w-10 text-black" />
             </div>
+            <h2 className="text-4xl font-black text-gray-900 mb-6 uppercase italic">Our Mission</h2>
+            <p className="text-gray-500 text-xl leading-relaxed font-light">
+              To provide world-class security services that protect our clients' assets, people, and reputation through vigilance, professionalism, and an unwavering commitment to excellence in every region we serve.
+            </p>
+          </div>
 
-            <div className="bg-white p-10 rounded-2xl shadow-lg border border-gray-100">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-100 rounded-full mb-6">
-                <Eye className="h-8 w-8 text-amber-800" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Vision</h2>
-              <p className="text-gray-700 text-lg leading-relaxed">
-                To be the most trusted and respected security service provider in India, known for our innovative solutions, exceptional service quality, and unwavering dedication to client safety and satisfaction.
-              </p>
+          <div className="group bg-white p-12 rounded-[40px] shadow-sm border border-gray-100 hover:shadow-2xl transition-all duration-700 relative overflow-hidden">
+            <div className="inline-flex items-center justify-center w-20 h-20 bg-gray-900 rounded-2xl mb-8 -rotate-3">
+              <Eye className="h-10 w-10 text-white" />
             </div>
+            <h2 className="text-4xl font-black text-gray-900 mb-6 uppercase italic">Our Vision</h2>
+            <p className="text-gray-500 text-xl leading-relaxed font-light">
+              To be recognized as Indias most reliable security partner, expanding our footprint from Goa and Faridabad to become the gold standard of safety and tactical innovation nationwide.
+            </p>
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-white">
+      {/* 4. CORE VALUES */}
+      <section className="py-24 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-gray-900 mb-4">Our Core Values</h2>
-          <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto text-lg">
-            The principles that guide everything we do
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-black text-gray-900 mb-4 uppercase italic">Core <span className="text-amber-500">Values</span></h2>
+            <p className="text-gray-500 text-xl max-w-2xl mx-auto font-light">The foundational pillars of our security architecture.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => (
-              <div
-                key={index}
-                className="text-center p-8 rounded-xl bg-gradient-to-br from-white to-gray-50 border border-gray-200 hover:shadow-xl transition-all transform hover:-translate-y-2"
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 bg-amber-800 rounded-full mb-4">
-                  <value.icon className="h-8 w-8 text-white" />
+              <div key={index} className="p-10 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-xl transition-all duration-500 group">
+                <div className="w-16 h-16 bg-white shadow-md rounded-2xl flex items-center justify-center mb-8 group-hover:bg-amber-500 transition-colors">
+                  <value.icon className="h-8 w-8 text-amber-600 group-hover:text-black transition-colors" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
+                <h3 className="text-2xl font-black text-gray-900 mb-4 uppercase italic tracking-tighter">{value.title}</h3>
+                <p className="text-gray-500 leading-relaxed text-lg">{value.description}</p>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="py-20 px-4 bg-gradient-to-br from-amber-900 to-gray-900 text-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Join Our Growing Family</h2>
-          <p className="text-xl mb-8 text-gray-200">
-            Experience the difference that professional security services can make
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:9145560600"
-              className="bg-white hover:bg-gray-100 text-gray-900 px-8 py-4 rounded-lg text-lg font-semibold transition-all"
-            >
-              Call: 9145560600
-            </a>
-            <a
-              href="mailto:info@grouponesecurity.com"
-              className="bg-amber-700 hover:bg-amber-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all"
-            >
-              Email Us
-            </a>
+      {/* 5. CALL TO ACTION */}
+      <section className="py-24 px-4">
+        <div className="max-w-7xl mx-auto rounded-[60px] bg-[#0a0c10] p-16 relative overflow-hidden text-center border border-white/5">
+          <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'radial-gradient(#f59e0b 0.5px, transparent 0.5px)', backgroundSize: '20px 20px' }}></div>
+          <div className="relative z-10">
+            <h2 className="text-5xl md:text-6xl font-black text-white mb-8 uppercase italic tracking-tighter">Ready for Elite <span className="text-amber-500">Protection?</span></h2>
+            <p className="text-2xl text-gray-400 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+              Whether you are in Goa or Faridabad, our professional security teams are ready to deploy.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+              <a href="tel:9145560600" className="bg-amber-500 hover:bg-amber-400 text-black px-12 py-5 rounded-2xl text-xl font-black transition-all">
+                GOA: 9145560600
+              </a>
+              <a href="tel:7775000216" className="bg-white hover:bg-gray-200 text-black px-12 py-5 rounded-2xl text-xl font-black transition-all">
+                HR: 7775000216
+              </a>
+            </div>
           </div>
         </div>
       </section>
